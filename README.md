@@ -37,6 +37,7 @@ To test the library, run StockTest.java as a jUnit Test.
 ## Coming Soon 
 
 * Retrieve Mutliple Stocks at Once
+* Stock Currency
 * More Methods 
 
 ## Contributors 
