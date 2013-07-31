@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
-class StockHelper {  
+class StockFetcher {  
 	
 	/*
 	* Returns a Stock Object that contains info about a specified stock.
@@ -104,7 +104,7 @@ class StockHelper {
 			} 
 			
 		} catch (IOException e) {
-			Logger log = Logger.getLogger(StockHelper.class.getName()); 
+			Logger log = Logger.getLogger(StockFetcher.class.getName()); 
 			log.log(Level.SEVERE, e.toString(), e);
 			return null;
 		}

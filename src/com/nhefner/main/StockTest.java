@@ -7,7 +7,7 @@ public class StockTest {
 	@Test
 	public void testStock() { 
 		
-		Stock facebook = StockHelper.getStock("FB");
+		Stock facebook = StockFetcher.getStock("FB");
 		System.out.println("Price: " + facebook.getPrice());
 		System.out.println("Volume: " + facebook.getVolume()); 
 		System.out.println("P/E: " + facebook.getPe());
