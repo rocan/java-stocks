@@ -10,7 +10,7 @@ Yahoo Finance allows stock data to be downloaded in CSV format. All we have to d
 ## Usage
 
 ```java
-Stock facebook = StockHelper.getStock("FB");
+Stock facebook = StockFetcher.getStock("FB");
 ```
 
 ## Methods 
