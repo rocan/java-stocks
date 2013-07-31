@@ -44,16 +44,16 @@ class StockFetcher {
 			// Handle Our Data
 			StockHelper sh = new StockHelper();
 			
-			price = sh.checkDouble(stockinfo[0]);
-			volume = sh.checkInt(stockinfo[1]);
-			pe = sh.checkDouble(stockinfo[2]);
-			eps = sh.checkDouble(stockinfo[3]);
-			week52low = sh.checkDouble(stockinfo[4]);
-			week52high = sh.checkDouble(stockinfo[5]);
-			daylow = sh.checkDouble(stockinfo[6]);
-			dayhigh = sh.checkDouble(stockinfo[7]);   
-			movingav50day = sh.checkDouble(stockinfo[8]);
-			marketcap = sh.checkDouble(stockinfo[9]);
+			price = sh.handleDouble(stockinfo[0]);
+			volume = sh.handleInt(stockinfo[1]);
+			pe = sh.handleDouble(stockinfo[2]);
+			eps = sh.handleDouble(stockinfo[3]);
+			week52low = sh.handleDouble(stockinfo[4]);
+			week52high = sh.handleDouble(stockinfo[5]);
+			daylow = sh.handleDouble(stockinfo[6]);
+			dayhigh = sh.handleDouble(stockinfo[7]);   
+			movingav50day = sh.handleDouble(stockinfo[8]);
+			marketcap = sh.handleDouble(stockinfo[9]);
 			
 		} catch (IOException e) {
 			Logger log = Logger.getLogger(StockFetcher.class.getName()); 

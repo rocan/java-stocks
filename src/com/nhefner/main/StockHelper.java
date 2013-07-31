@@ -8,7 +8,7 @@ public class StockHelper {
 		
 	}
 	
-	public double checkDouble(String x) {
+	public double handleDouble(String x) {
 		Double y;
 		if (Pattern.matches("N/A", x)) {  
 			y = 0.00;   
@@ -18,7 +18,7 @@ public class StockHelper {
 		return y;
 	}
 	
-	public int checkInt(String x) {
+	public int handleInt(String x) {
 		int y;
 		if (Pattern.matches("N/A", x)) {  
 			y = 0;   
