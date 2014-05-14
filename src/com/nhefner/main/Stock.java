@@ -33,7 +33,7 @@ public class Stock {
 		return this.symbol;		
 	} 
 	
-	public Double getPrice() { 		
+	public double getPrice() { 		
 		return this.price;		
 	} 
 	
