@@ -8,7 +8,7 @@ import java.net.URLConnection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-class StockFetcher {  
+public class StockFetcher {  
 	
 	/*
 	* Returns a Stock Object that contains info about a specified stock.
