@@ -16,7 +16,7 @@ public class StockFetcher {
 	* @return 	a stock object containing info about the company's stock
 	* @see Stock
 	*/
-	static Stock getStock(String symbol) {  
+	public static Stock getStock(String symbol) {  
 		String sym = symbol.toUpperCase();
 		double price = 0.0;
 		int volume = 0;
@@ -28,11 +28,12 @@ public class StockFetcher {
 		double dayhigh = 0.0;
 		double movingav50day = 0.0;
 		double marketcap = 0.0;
+		double preclos=0.0;
 	
 		try { 
 			
 			// Retrieve CSV File
-			URL yahoo = new URL("http://finance.yahoo.com/d/quotes.csv?s="+ symbol + "&f=l1vr2ejkghm3j3");
+			URL yahoo = new URL("http://finance.yahoo.com/d/quotes.csv?s="+ symbol + "&f=l1vrejkghm3j1p");
 			URLConnection connection = yahoo.openConnection(); 
 			InputStreamReader is = new InputStreamReader(connection.getInputStream());
 			BufferedReader br = new BufferedReader(is);  
@@ -42,18 +43,19 @@ public class StockFetcher {
 			String[] stockinfo = line.split(","); 
 			
 			// Handle Our Data
-			StockHelper sh = new StockHelper();
+			StockHelper sh = new StockHelper(); // special tag
 			
-			price = sh.handleDouble(stockinfo[0]);
-			volume = sh.handleInt(stockinfo[1]);
-			pe = sh.handleDouble(stockinfo[2]);
+			price = sh.handleDouble(stockinfo[0]); // l2
+			volume = sh.handleInt(stockinfo[1]); //v
+			pe = sh.handleDouble(stockinfo[2]); // r, r2(real time)
 			eps = sh.handleDouble(stockinfo[3]);
 			week52low = sh.handleDouble(stockinfo[4]);
 			week52high = sh.handleDouble(stockinfo[5]);
 			daylow = sh.handleDouble(stockinfo[6]);
 			dayhigh = sh.handleDouble(stockinfo[7]);   
 			movingav50day = sh.handleDouble(stockinfo[8]);
-			marketcap = sh.handleDouble(stockinfo[9]);
+			marketcap = sh.handleDouble(stockinfo[9]); //j3
+			preclos=sh.handleDouble(stockinfo[10]);
 			
 		} catch (IOException e) {
 			Logger log = Logger.getLogger(StockFetcher.class.getName()); 
@@ -61,7 +63,7 @@ public class StockFetcher {
 			return null;
 		}
 		
-		return new Stock(sym, price, volume, pe, eps, week52low, week52high, daylow, dayhigh, movingav50day, marketcap);
+		return new Stock(sym, price, volume, pe, eps, week52low, week52high, daylow, dayhigh, movingav50day, marketcap,preclos);
 		
 	}
 }
